@@ -1,0 +1,31 @@
+return {
+  'williamboman/mason.nvim',
+  opts = function(_, opts)
+    vim.list_extend(opts.ensure_installed, {
+      'ruff',
+      'bash-language-server',
+      'markdownlint',
+      'editorconfig-checker',
+      'pyright',
+      'beautysh',
+      'css-lsp',
+      'emmet-ls',
+      'eslint-lsp',
+      'flake8',
+      'black',
+      'pyright',
+      'html-lsp',
+      'json-lsp',
+      'lua-language-server',
+      'marksman',
+      'shellcheck',
+      'shfmt',
+      'stylua',
+      'yaml-language-server',
+      'prettier',
+      'gopls',
+      'golangci-lint',
+      'goimports',
+    })
+  end,
+}
