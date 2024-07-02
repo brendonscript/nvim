@@ -14,7 +14,7 @@ return {
       documentation = cmp.config.window.bordered(),
     }
     opts.completion.completeopt = 'menu,menuone,noinsert,noselect'
-    opts.experimental.ghost_text = false
+    opts.experimental.ghost_text = true
 
     -- local suggestion = require('supermaven-nvim.completion_preview')
     local has_words_before = function()
