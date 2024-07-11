@@ -24,14 +24,18 @@ M.is_wsl = function()
 end
 
 M.map = function(mode, lhs, rhs, opts)
-  local keys = require('lazy.core.handler').handlers.keys
-  ---@cast keys LazyKeysHandler
-  -- do not create the keymap if a lazy keys handler exists
-  if not keys.active[keys.parse({ lhs, mode = mode }).id] then
-    opts = opts or {}
-    opts.silent = opts.silent ~= false
-    vim.keymap.set(mode, lhs, rhs, opts)
-  end
+  opts = opts or {}
+  opts.silent = opts.silent ~= false
+  vim.keymap.set(mode, lhs, rhs, opts)
+end
+
+M.ft_map = function(mode, lhs, rhs, opts)
+  opts = opts or {}
+  opts.noremap = opts.noremap or true
+  opts.silent = opts.silent or true
+  opts.buffer = opts.buffer or true
+  vim.keymap.set(mode, lhs, rhs, opts)
+  -- end
 end
 
 M.augroup = function(name)
@@ -44,29 +48,6 @@ M.create_commands = function(cmds)
   for key, value in pairs(cmds) do
     vim.api.nvim_create_user_command(key, value, {})
   end
-end
-
---- Create autocmds for FileType
---- @param cmds table<string, any>
-M.ft_commands = function(cmds)
-  for key, value in pairs(cmds) do
-    vim.api.nvim_create_autocmd('FileType', {
-      group = M.augroup(key),
-      pattern = { key },
-      callback = value,
-    })
-  end
-end
-
---- Create autocmds for FileType
---- @param ft string: file type
---- @param cb function: callback
-M.ft_command = function(ft, cb)
-  vim.api.nvim_create_autocmd('FileType', {
-    group = M.augroup(ft .. '_single'),
-    pattern = { ft },
-    callback = cb,
-  })
 end
 
 M.close_floats = function()
