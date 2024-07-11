@@ -41,4 +41,17 @@ return {
       },
     },
   },
+  {
+    'echasnovski/mini.icons',
+    opts = {
+      extension = {
+        norg = {
+          glyph = '',
+        },
+        json = {
+          glyph = '󰘦',
+        },
+      },
+    },
+  },
 }

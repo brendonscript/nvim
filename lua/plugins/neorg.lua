@@ -1,9 +1,10 @@
 return {
   {
     'nvim-neorg/neorg',
-    lazy = true,
+    lazy = false,
     version = '*',
     ft = 'norg',
+    build = ':Neorg sync-parsers',
     opts = {
       load = {
         ['core.defaults'] = {},
@@ -13,10 +14,9 @@ return {
             workspaces = {
               notes = '~/Documents/org',
             },
-            default_workspace = 'org',
+            default_workspace = 'notes',
           },
         },
-        -- /home/brendon/Documents/org
       },
     },
   },

@@ -4,7 +4,6 @@
 local utils = require('utils.helpers')
 local opt = vim.opt
 vim.g.root_spec = { 'cwd' }
-vim.g.maplocalleader = ','
 
 opt.wrap = true
 opt.spell = false
