@@ -28,6 +28,7 @@ return {
       ['<M-s>'] = 'actions.select_split',
       ['gv'] = 'actions.select_vsplit',
       ['gs'] = 'actions.select_split',
+      ['gS'] = 'actions.change_sort',
       ['<C-l>'] = false,
       ['<C-s>'] = 'actions.select_vsplit',
       ['<C-h>'] = false,
