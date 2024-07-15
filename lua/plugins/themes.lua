@@ -8,6 +8,7 @@ return {
   {
     'folke/tokyonight.nvim',
     lazy = true,
+    priority = 1000,
     opts = {
       style = 'storm',
       on_colors = function(colors)
@@ -37,6 +38,10 @@ return {
         }
       end,
     },
+    config = function(_, opts)
+      require('tokyonight').setup(opts)
+      vim.cmd([[colorscheme tokyonight]])
+    end,
   },
   {
     'catppuccin/nvim',
