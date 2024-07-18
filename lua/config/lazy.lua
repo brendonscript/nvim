@@ -37,7 +37,7 @@ require('lazy').setup({
     -- version = "*", -- try installing the latest stable version for plugins that support semver
   },
   install = { colorscheme = { 'tokyonight' } },
-  checker = { enabled = true }, -- automatically check for plugin updates
+  checker = { enabled = true, notify = false }, -- automatically check for plugin updates
   pkg = {
     enabled = true,
     cache = vim.fn.stdpath('state') .. '/lazy/pkg-cache.lua',
