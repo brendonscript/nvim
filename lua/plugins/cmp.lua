@@ -4,8 +4,8 @@ return {
     'hrsh7th/cmp-cmdline',
   },
   keys = {
-    { '<tab>', false, mode = { 'i', 's' } },
-    { '<s-tab>', false, mode = { 'i', 's' } },
+    -- { '<tab>', false, mode = { 'i', 's' } },
+    -- { '<s-tab>', false, mode = { 'i', 's' } },
   },
   opts = function(_, opts)
     local cmp = require('cmp')
@@ -16,7 +16,7 @@ return {
     opts.completion.completeopt = 'menu,menuone,noinsert,noselect'
     opts.experimental.ghost_text = false
 
-    opts.mapping = {
+    opts.mapping = vim.tbl_deep_extend('force', opts.mapping, {
       ['<C-d>'] = cmp.mapping(function()
         if cmp.visible_docs() then
           cmp.close_docs()
@@ -33,7 +33,7 @@ return {
           select = true,
         })
       end, { 'i', 's' }),
-    }
+    })
 
     -- Use buffer source for `/` and `?` (if you enabled `native_menu`, this won't work anymore).
     ---@diagnostic disable-next-line: missing-fields
