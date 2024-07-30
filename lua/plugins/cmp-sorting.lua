@@ -3,8 +3,8 @@ local function configure_sources(lazy_sources)
     nvim_lsp = { group_index = 1, order = 1 },
     snippets = { group_index = 1, order = 2 },
     copilot = { group_index = 1, order = 3 },
-    buffer = { group_index = 2, order = 4 },
-    path = { group_index = 2, order = 5 },
+    buffer = { group_index = 1, order = 4 },
+    path = { group_index = 1, order = 5 },
     lazydev = { group_index = 0, order = 6 },
     git = { group_index = 2, order = 7 },
   }

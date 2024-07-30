@@ -86,11 +86,4 @@ return {
       }),
     })
   end,
-  config = function(_, opts)
-    local cmp = require('cmp')
-    local print_tbl = require('utils.helpers').print_table
-    print_tbl(opts)
-
-    cmp.setup(opts)
-  end,
 }
