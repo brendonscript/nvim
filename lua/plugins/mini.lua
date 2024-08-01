@@ -41,8 +41,10 @@ return {
       },
     },
   },
+  { 'nvim-tree/nvim-web-devicons', lazy = true },
   {
     'echasnovski/mini.icons',
+    enabled = false,
     opts = {
       extension = {
         norg = {
