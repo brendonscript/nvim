@@ -25,6 +25,7 @@ return {
         enabled = false,
       },
       servers = {
+        powershell_es = {},
         pyright = {},
         tailwindcss = {},
         lua_ls = {
