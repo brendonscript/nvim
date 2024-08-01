@@ -30,7 +30,7 @@ return {
         'markdown_inline',
         'norg',
         'org',
-        'powershell',
+        -- 'powershell',
         'python',
         'query',
         'regex',
