@@ -85,10 +85,6 @@ map('n', '<leader>bY', '<cmd>let @+=expand("%:p")<cr>', { desc = 'Copy current f
 
 map('n', 'g<C-p>', 'o<ESC>p')
 
-map('n', '<leader>gG', function()
-  LazyVim.lazygit({ cwd = LazyVim.root.git() })
-end, { desc = 'Lazygit (Root Dir)' })
-
 map('n', '<leader>g<C-g>', function()
   LazyVim.lazygit()
 end, { desc = 'Lazygit (cwd)' })
