@@ -10,7 +10,7 @@ return {
       desc = 'Oil',
     },
     {
-      '_',
+      '<C-->',
       function()
         require('oil').open_float()
       end,
