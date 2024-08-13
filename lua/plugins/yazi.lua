@@ -3,7 +3,7 @@ return {
   lazy = true,
   keys = {
     {
-      '_',
+      '<leader>F',
       function()
         require('yazi').yazi()
       end,
@@ -11,7 +11,7 @@ return {
     },
     {
       -- Open in the current working directory
-      '<leader>F',
+      '<leader><C-f>',
       function()
         require('yazi').yazi(nil, vim.fn.getcwd())
       end,
