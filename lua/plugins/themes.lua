@@ -2,13 +2,110 @@ return {
   {
     'LazyVim/LazyVim',
     opts = {
-      colorscheme = 'tokyonight',
+      colorscheme = 'catppuccin-mocha',
     },
   },
   {
+    'akinsho/bufferline.nvim',
+    dependencies = { 'catppuccin' },
+    opts = function(_, opts)
+      local mocha = require('catppuccin.palettes').get_palette('mocha')
+      local macchiato = require('catppuccin.palettes').get_palette('macchiato')
+      opts.highlights = require('catppuccin.groups.integrations.bufferline').get({
+        styles = { 'italic', 'bold' },
+        custom = {
+          mocha = {
+            background = {
+              bg = mocha.base,
+              fg = mocha.subtext0,
+            },
+            fill = { bg = mocha.base },
+            buffer_selected = {
+              bg = mocha.base,
+              fg = mocha.text,
+            },
+          },
+        },
+      })
+    end,
+  },
+  {
     'folke/tokyonight.nvim',
+    enabled = false,
     lazy = true,
-    priority = 1000,
+    dependencies = {
+      'akinsho/bufferline.nvim',
+      opts = function(_, opts)
+        local colors = require('tokyonight.colors').setup()
+        opts.highlights = {
+          buffer_selected = {
+            bg = colors.bg,
+            fg = colors.cyan,
+            bold = true,
+            italic = true,
+          },
+          buffer_visible = {
+            bg = colors.bg,
+            fg = colors.blue,
+            bold = false,
+            italic = false,
+          },
+          buffer = {
+            bg = colors.bg_highlight,
+            fg = colors.fg,
+          },
+          fill = {
+            bg = colors.bg_highlight,
+          },
+          background = {
+            bg = colors.bg_highlight,
+            -- fg = colors.blue1,
+          },
+          -- separator = {
+          --   bg = colors.bg_highlight,
+          --   fg = colors.bg_highlight,
+          -- },
+          -- separator_visible = {
+          --   bg = colors.bg_highlight,
+          --   fg = colors.bg_highlight,
+          -- },
+          -- separator_selected = {
+          --   bg = colors.bg_highlight,
+          --   fg = colors.bg_highlight,
+          -- },
+          -- offset_separator = {
+          --   bg = colors.yellow,
+          --   fg = colors.yellow,
+          -- },
+          -- tab_separator = {
+          --   fg = colors.yellow,
+          --   bg = colors.yellow,
+          -- },
+          duplicate_visible = {
+            fg = 'white',
+            bg = colors.red,
+            italic = true,
+          },
+          duplicate = {
+            fg = 'white',
+            bg = colors.red,
+            italic = true,
+          },
+          duplicate_selected = {
+            fg = 'white',
+            bg = colors.red,
+            italic = true,
+          },
+          trunc_marker = {
+            bg = colors.bg,
+            fg = colors.fg,
+          },
+          modified = {
+            bg = colors.bg_highlight,
+          },
+        }
+      end,
+    },
     opts = {
       style = 'storm',
       on_colors = function(colors)
@@ -38,23 +135,10 @@ return {
         }
       end,
     },
-    config = function(_, opts)
-      require('tokyonight').setup(opts)
-      vim.cmd([[colorscheme tokyonight]])
-    end,
-  },
-  {
-    'catppuccin/nvim',
-    lazy = true,
-    name = 'catppuccin',
-    opts = {
-      integrations = {
-        navic = {
-          custom_bg = 'NONE',
-          enabled = true,
-        },
-      },
-    },
+    -- config = function(_, opts)
+    --   require('tokyonight').setup(opts)
+    --   vim.cmd([[colorscheme tokyonight]])
+    -- end,
   },
   {
     'nyoom-engineering/oxocarbon.nvim',
