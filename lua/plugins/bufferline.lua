@@ -17,6 +17,7 @@ return {
     opts = function(_, opts)
       local groups = require('bufferline.groups')
       opts.options = {
+        mode = 'tabs',
         sort_by = 'extension',
         themable = true,
         always_show_bufferline = true,

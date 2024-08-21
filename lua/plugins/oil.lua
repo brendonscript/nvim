@@ -68,7 +68,7 @@ return {
     view_options = {
       show_hidden = true,
     },
-    default_file_explorer = true,
+    default_file_explorer = false,
     use_default_keymaps = true,
     buf_options = {
       buflisted = false,
