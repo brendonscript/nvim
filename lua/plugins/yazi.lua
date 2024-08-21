@@ -1,7 +1,8 @@
+---@type LazySpec
 return {
   {
     'mikavilpas/yazi.nvim',
-    lazy = true,
+    event = 'VeryLazy',
     keys = {
       {
         '<leader>Ff',
@@ -65,6 +66,9 @@ return {
         show_help = '<f1>',
       },
     },
+    config = function(_, opts)
+      require('yazi').setup(opts)
+    end,
   },
   {
     'nvim-neo-tree/neo-tree.nvim',
