@@ -3,7 +3,6 @@ return {
   opts = {
     spec = {
       { '<leader>F', 'yazi' },
-      { '<leader>y', 'yazi' },
     },
   },
 }
