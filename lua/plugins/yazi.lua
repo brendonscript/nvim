@@ -2,7 +2,7 @@
 return {
   {
     'mikavilpas/yazi.nvim',
-    event = 'VeryLazy',
+    lazy = false,
     keys = {
       {
         '<leader>Ff',
