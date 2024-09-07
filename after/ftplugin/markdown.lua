@@ -2,8 +2,8 @@ local map = require('utils.helpers').ft_map
 
 vim.opt_local.autowriteall = true
 vim.opt_local.autowrite = true
-vim.opt_local.shiftwidth = 4
-vim.opt_local.tabstop = 4
+vim.opt_local.shiftwidth = 2
+vim.opt_local.tabstop = 2
 vim.opt_local.spell = false
 
 map('n', '<leader>md', '<cmd>.s/-.*]/- [x]<cr><cmd>nohl<cr>', { desc = 'Mark as complete' })
